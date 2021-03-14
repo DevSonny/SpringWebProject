@@ -1,2 +1,2 @@
 # Study
-Study repository
+DevSonny의 Study repository입니다.
