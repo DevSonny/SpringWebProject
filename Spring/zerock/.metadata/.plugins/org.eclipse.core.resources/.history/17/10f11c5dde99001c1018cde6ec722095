@@ -1,0 +1,9 @@
+package org.zerock.sample;
+
+import org.springframework.stereotype.Component;
+
+public class SampleHotel {
+
+	
+	
+}

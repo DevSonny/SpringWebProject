@@ -1,0 +1,7 @@
+package org.zerock.mapper;
+
+public interface BoardMapper {
+    
+    List<BoardVO> getList();
+
+}
