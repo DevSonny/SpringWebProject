@@ -46,6 +46,36 @@
                                 </form>
                                 <button type="button" class="btn btn-default listBtn"><a href='/board/list'>List</a></button>
                                 <button type="button" class="btn btn-default modBtn"><a href='/board/modify?bno=<c:out value="${board.bno}"/>'>Modify</a></button>                                 
+                                <script type="text/javascript" src="/resources/js/reply.js"></script>
+                                <script type="text/javascript">
+                                $(document).ready(function() {
+                                    console.log(replyService);
+                                });
+                                </script>
+                                <script type="text/javascript">
+                                $(document).ready(function() {
+                                    var openForm = $("operForm");
+                                    $("button[data-oper='modify']").on("click", function(e) {
+                                        operForm.attr("action", "/board/modify").submit();
+                                    });
+                                });
+                                </script>
+                                <script type="text/javascript">
+                                console.log("===============");
+                                console.log("JS TEST");
+
+                                var bnoValue = '<c:out value="${board.bno}"/>'; 
+
+                                //for replyService add test
+                                replyService.add(
+                                    
+                                    {reply:"JS Test", replyer:"tester", bno:bnoValue}
+                                    ,
+                                    function(result){ 
+                                    alert("RESULT: " + result);
+                                    }
+                                ); 
+                                </script>
                                 <script>
                                 
                                 var actionForm = $("#actionForm");
@@ -70,6 +100,4 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-
-    <%@include file="../includes/footer.jsp" %>            
-        
+<%@include file="../includes/footer.jsp" %>           
