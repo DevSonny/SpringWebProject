@@ -7,13 +7,13 @@ import org.zerock.domain.Criteria;
 
 public interface BoardService {
     
-    Long register(BoardVO board);
+    int register(BoardVO board);
     
-    BoardVO get(Long bno);
+    BoardVO get(int bno);
     
     int modify(BoardVO board);
     
-    int remove(Long bno);
+    int remove(int bno);
 
     List<BoardVO> getList();
     

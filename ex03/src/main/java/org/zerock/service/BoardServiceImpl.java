@@ -20,7 +20,7 @@ public class BoardServiceImpl implements BoardService {
     private final BoardMapper mapper;
 
     @Override
-    public Long register(BoardVO board) {
+    public int register(BoardVO board) {
         
         mapper.insertSelectKey(board);
      
@@ -28,7 +28,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public BoardVO get(Long bno) {
+    public BoardVO get(int bno) {
         return mapper.read(bno);
     }
 
@@ -38,7 +38,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public int remove(Long bno) {
+    public int remove(int bno) {
         return mapper.delete(bno);
     }
 

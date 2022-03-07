@@ -48,7 +48,7 @@ public class BoardController {
     @PostMapping("/register")
     public String regster(BoardVO board, RedirectAttributes rttr) {
         log.info("board: "+board);
-        Long bno = service.register(board);
+        int bno = service.register(board);
         log.info("BNO: "+bno);
         rttr.addFlashAttribute("result", bno);
         
@@ -56,7 +56,7 @@ public class BoardController {
     }
 
     @GetMapping({"/get", "/modify"})
-    public void get(@RequestParam("bno") long bno, @ModelAttribute("cri") Criteria cri, Model model) {
+    public void get(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, Model model) {
         model.addAttribute("board", service.get(bno));
     }
     
@@ -80,7 +80,7 @@ public class BoardController {
     }
 
     @PostMapping("/remove")
-    public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttributes rttr) {
+    public String remove(@RequestParam("bno") int bno, Criteria cri, RedirectAttributes rttr) {
         
         int count = service.remove(bno);
         
